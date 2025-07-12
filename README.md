@@ -20,4 +20,8 @@ Python, pandas, matplotlib, Jupyter Notebook
 Top 3 products for "Oily" + "Acne":
 - Acne Serum (Rating: 4.7)
 - Oil-Free Toner (Rating: 4.3)
-...
+
+### Prerequisites
+
+- Python 3.8+
+- Required libraries listed in `requirements.txt`
