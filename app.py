@@ -22,3 +22,15 @@ if st.button("get your personalized recommendations"):
     st.subheader(" based on your input...")
     st.write(f"Skin type: **{skin_type}**")
     st.write(f"Concerns: **{', '.join(concerns)}**")
+
+
+st.markdown("### Suggested Skincare Tip or Product:")
+
+if skin_type == "Oily" and concerns == "Acne":
+    st.write("Try a foaming cleanser with salicylic acid and a lightweight moisturizer.")
+elif skin_type == "Dry" and concerns == "Wrinkles":
+    st.write("Use a hydrating cleanser and apply retinol at night followed by moisturizer.")
+elif skin_type == "Combination" and concerns == "Redness":
+    st.write("Look for fragrance-free products with niacinamide or green tea.")
+else:
+    st.write("Explore products with gentle ingredients suited to your skin type and concern.")
