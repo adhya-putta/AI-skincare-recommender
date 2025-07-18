@@ -18,6 +18,7 @@ concerns = st.multiselect(
     ["Acne", "Redness", "Dryness", "Aging", "Dark spots", "Sensitivity", "Comedones"]
 )
 
+
 if st.button("get your personalized recommendations"):
     st.subheader(" based on your input...")
     st.write(f"Skin type: **{skin_type}**")
@@ -26,11 +27,14 @@ if st.button("get your personalized recommendations"):
 
 st.markdown("### Suggested Skincare Tip or Product:")
 
-if skin_type == "Oily" and concerns == "Acne":
-    st.write("Try a foaming cleanser with salicylic acid and a lightweight moisturizer.")
-elif skin_type == "Dry" and concerns == "Wrinkles":
-    st.write("Use a hydrating cleanser and apply retinol at night followed by moisturizer.")
-elif skin_type == "Combination" and concerns == "Redness":
-    st.write("Look for fragrance-free products with niacinamide or green tea.")
+if "Acne" in concerns and skin_type == "Oily":
+    st.write("try a foaming cleanser with salicylic acid and a lightweight moisturizer.")
+elif "Aging" in concerns and skin_type == "Dry":
+    st.write("use a hydrating cleanser and apply retinol at night followed by moisturizer.")
+elif "Redness" in concerns and skin_type == "Combination":
+    st.write("look for fragrance-free products with niacinamide or green tea.")
+elif concerns:
+    st.write("explore products with gentle ingredients suited to your skin type and concern.")
 else:
-    st.write("Explore products with gentle ingredients suited to your skin type and concern.")
+    st.write("select at least one skin concern to get recommendations!")
+
