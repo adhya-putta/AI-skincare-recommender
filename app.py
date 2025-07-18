@@ -9,32 +9,29 @@ st.write(
 
 skin_type = st.selectbox(
     "please select your skin type:",
-    ["Oily", "Dry", "Combination", "Sensitive", "Normal"]
+    ["oily", "dry", "combination", "sensitive", "normal"]
 )
-
 
 concerns = st.multiselect(
     "what are your current skin concerns?",
-    ["Acne", "Redness", "Dryness", "Aging", "Dark spots", "Sensitivity", "Comedones"]
+    ["acne", "redness", "dryness", "aging", "dark spots", "sensitivity", "nomedones"]
 )
 
-
 if st.button("get your personalized recommendations"):
-    st.subheader(" based on your input...")
-    st.write(f"Skin type: **{skin_type}**")
-    st.write(f"Concerns: **{', '.join(concerns)}**")
+    st.subheader("based on your input...")
+    st.write(f"skin type: **{skin_type}**")
+    st.write(f"concerns: **{', '.join(concerns)}**")
 
+    st.markdown("### suggested skincare tip or product:")
 
-st.markdown("### Suggested Skincare Tip or Product:")
-
-if "Acne" in concerns and skin_type == "Oily":
-    st.write("try a foaming cleanser with salicylic acid and a lightweight moisturizer.")
-elif "Aging" in concerns and skin_type == "Dry":
-    st.write("use a hydrating cleanser and apply retinol at night followed by moisturizer.")
-elif "Redness" in concerns and skin_type == "Combination":
-    st.write("look for fragrance-free products with niacinamide or green tea.")
-elif concerns:
-    st.write("explore products with gentle ingredients suited to your skin type and concern.")
-else:
-    st.write("select at least one skin concern to get recommendations!")
+    if "acne" in [c.lower() for c in concerns] and skin_type.lower() == "oily":
+        st.write("try a foaming cleanser with salicylic acid and a lightweight moisturizer.")
+    elif "aging" in [c.lower() for c in concerns] and skin_type.lower() == "dry":
+        st.write("use a hydrating cleanser and apply retinol at night followed by moisturizer.")
+    elif "redness" in [c.lower() for c in concerns] and skin_type.lower() == "combination":
+        st.write("look for fragrance-free products with niacinamide or green tea.")
+    elif concerns:
+        st.write("explore products with gentle ingredients suited to your skin type and concern.")
+    else:
+        st.write("select at least one skin concern to get recommendations!")
 
