@@ -1,4 +1,7 @@
+streamlit
+openai
 pandas
 matplotlib
 seaborn
+python-dotenv
 notebook
